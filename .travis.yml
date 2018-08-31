@@ -79,6 +79,12 @@ jobs:
                 - cat test-suite.log
                 - cat tests/*.log
 
+        # Test RV-Toolkit
+        -   &test-rv-toolkit
+            stage: test
+            os: linux
+            script:
+              - bash <(curl -s https://runtimeverification.com/toolkit/docker/bash) nightly-2018-08-31
 
         # Build with clang and run tests on Ubuntu.
         -   <<: *test-ubuntu
