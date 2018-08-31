@@ -14,3 +14,5 @@ autoreconf -fi
 make -j`nproc`
 make check
 
+touch $json_out && rv-html-report $json_out -o $report_out
+rv-upload-report $report_out
